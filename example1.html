@@ -1,0 +1,91 @@
+<!--/*
+		The <!DOCTYPE> tag does not have an end tag.
+		The <!DOCTYPE> declaration is NOT case sensitive.
+*/-->
+<!DOCTYPE html>
+<!--
+	The manifest attribute is supported in Internet Explorer 10, Firefox, Opera, Chrome, and Safari.
+	<html manifest="URL">
+	The recommended file extension for manifest files is: ".appcache"
+	Example for manifest file
+	CACHE MANIFEST
+	# Comment Section
+	# Required, will be cached
+	# 2012-02-21 v1.0.0
+	/theme.css
+	/logo.gif
+	/main.js
+
+	NETWORK:
+	#will never be cached
+	login.asp
+
+	FALLBACK:
+	#fallback pages if a page is inaccessible
+	/html/ /offline.html
+	
+	The xmlns attribute is required in XHTML, but is invalid in HTML.
+	<html xmlns="http://www.w3.org/1999/xhtml">
+-->
+<!--
+	The HTML lang attribute can be used to declare the language of a Web page or a portion of a Web page. This is meant to assist search engines and browsers.
+	According to the W3C recommendation you should declare the primary language for each Web page with the lang attribute inside the <html> tag, like this:
+	<html lang="en">
+	<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+	
+	URL that has list of standardized nomenclature used to classify all known languages
+	https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+-->
+<html lang="en">
+	<head>
+		<title>The HTML5, CSS3 and JavaScript Programming</title>
+		
+		<meta name="description" content="HTML5,CSS3,ECMAScript6 standard experiments">
+		<meta name="keywords" content="HTML,CSS,XML,JavaScript">
+		<meta name="author" content="Janakiraman Veerappan">
+		<!--/* charset declaration before HTML5 */ meta http-equiv="Content-Type" content="text/html; charset=utf-8"/ -->
+		<!-- /* Common charset values  are 
+				UTF-8 - Character encoding for Unicode
+				ISO-8859-1 - Character encoding for the Latin alphabet
+				The complete list of charset encoding available at 
+				http://www.iana.org/assignments/character-sets/character-sets.xml
+		*/ -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0"/>
+		<meta name="apple-mobile-web-app-capable" content="yes"/>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+		
+		<script src="bindready.js"></script>
+		<script src="onready.js"></script>
+		
+		
+		<script language="javascript">
+			/*window.tdiff = []; fred = function(a,b){return a-b;};
+			window.document.onload = function(e){
+				console.log("document.onload ", e, Date.now() ,window.tdiff,  (window.tdiff[0] = Date.now()) && window.tdiff.reduce(fred) );
+			}
+			window.onload = function(e){
+				console.log("window.onload ", e, Date.now() , window.tdiff, (window.tdiff[1] = Date.now()) && window.tdiff.reduce(fred) );
+			}
+			function testonload(val){
+				console.log("Test onload: "+ val);
+			}*/
+			onReady(function() {                                               
+			  document.body.appendChild(document.createTextNode('init 1! '))
+			})
+
+			onReady(function() {                                               
+			  document.body.appendChild(document.createTextNode('init 2! '))
+			})
+		</script>
+
+	</head>
+	<body >
+		Test Page
+		
+		<script>
+		// prevent caching with random param
+		document.write('<img src="web.jpg?nocache='+Math.random()+'" width="200">');
+		</script>
+	</body>
+</html>
